@@ -1,11 +1,7 @@
 package ADA.RA1.ficheros;
 
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.List;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-
+import java.util.*;
+import java.util.function.*;
 
 
 public class Main {
@@ -48,18 +44,103 @@ public class Main {
         Predicate<String> mayor3 = (esposa) -> esposa.length() == 3;
 
         //6 . Comprobar que elementos cumplen ambos
-        for (int i = 0; i < 3; i++) {
-            empiezaA.and(mayor3).test(esposas.get(i));
+        for (int i = 0; i < esposas.size(); i++) {
+            if(empiezaA.and(mayor3).test(esposas.get(i))){
+                System.out.println(esposas.get(i));
+            }
+        }
+
+        List<Aldea> aldeas = Arrays.asList(
+                new Aldea("Konoha", 15000),
+                new Aldea("Murcia", 1000),
+                new Aldea("Patri", 10),
+                new Aldea("Marina", 15),
+                new Aldea("Nueva Dehli", 1000000000)
+        );
+
+        //7. Ahora me psa una lista y un numero y si esa aldea espieza por la letra N y tengas mas de 100.000 habitantes.
+        // MOstramos la ciudades que cumplan eso
+
+        BiPredicate<String,Integer> preAldea = (letra,habitante) ->  letra.startsWith("N") && habitante > 100000;
+
+        for (int i = 0; i < aldeas.size(); i++) {
+            if(preAldea.test(aldeas.get(i).getNombre(),aldeas.get(i).getHabitantes())){
+                System.out.println(aldeas.get(i));
+            }
+        }
+
+        Consumer<String> imprimirTexto = (t) -> System.out.println(t);
+        imprimirTexto.accept("Dolares");
+
+        //8. Consumer que imprima una Aldea que le pase.
+        Consumer<Aldea> imprimirAldea = (chi) -> System.out.println(chi);
+        imprimirAldea.accept(new Aldea("Paldea", 1000000));
+
+        //9. mOstramos todas las ciudades de la lista utilizando el consumer de antes
+        for (int i = 0; i < aldeas.size(); i++) {
+            imprimirAldea.accept(aldeas.get(i));
+        }
+
+        //10. Pasamos dos String y lo imprimo por espacio.
+        BiConsumer<String, String> animales = (p,a) -> System.out.println(p + " " + a);
+        animales.accept("Periquito", "Antilope");
+
+        Map<String, String> contactos = new HashMap<>();
+        contactos.put("Patri", "Plaza Barcelona");
+        contactos.put("Ivan", "Plaza Madrid");
+        contactos.put("Pablo", "Pisos Azules");
+
+        //11. Mostrar los contactos, nombre y direccion  separados por espacio
+        for (Map.Entry<String, String> contac: contactos.entrySet()) {
+            animales.accept(contac.getKey(),contac.getValue());
+        }
+
+        //Existe y ya
+        Supplier<Aldea> productoCuidad = () -> new Aldea("Esternocleidomastoideo", 123412);
+        Aldea a = productoCuidad.get();
+        System.out.println(a);
+
+        //12. Crea una lista con 10 String, luego utilizando muestre la ultima letra
+        //de cada uno de los string de la lista
+        List<String> lista = List.of("Si","No","Puede","Carlos","Nartuo","Patri","pitufo","leon","telefono","OnePiece");
+        Consumer<String> preComp = (c) -> System.out.println(c.charAt(c.length() -1));
+        for (int i = 0; i < lista.size(); i++) {
+            preComp.accept(lista.get(i));
         }
     }
 }
 
+class Aldea{
+    private String nombre;
+    private int habitantes;
+
+    public Aldea(String nombre, int habitantes) {
+        this.nombre = nombre;
+        this.habitantes = habitantes;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getHabitantes() {
+        return habitantes;
+    }
+
+    @Override
+    public String toString() {
+        return "Aldea{" +
+                "nombre='" + nombre + '\'' +
+                ", habitantes=" + habitantes +
+                '}';
+    }
+}
 //UN unico metodo abstracto
 @FunctionalInterface
 interface Printable{
 
     //variables finales
-    public static final int numreo = 9;
+    public static final int numero = 9;
 
     //metodo abstracto
     void test(int n);
