@@ -1,0 +1,52 @@
+//FCFS
+        /**
+         * Proceso  Tiempo llegado  Tiempo de CPU
+         * P1           0                   8           T espera =  0             T retorno = 8
+         * P2           4                   6           T espera =  8             T retorno = 18
+         * P3           2                   4           T espera =  6            T retorno = 12
+         *
+         * T espera Medio = 14 / 3 =  4,6666      T retorno total = 12,66666
+         */
+
+
+        //SJF -- mal
+        /**
+         * Proceso  Tiempo llegado  Tiempo de CPU
+         * P1           0                   7           T espera =  9            T retorno = 16      fALA=0
+         * P2           2                   4           T espera =  1            T retorno = 7     FALA= 0
+         * P3           4                   1           T espera =  0            T retorno = 5    fALA = 0
+         * P4           5                   4           T espera =  2            T retorno = 11      fala = 0
+         *
+         * T espera Medio = 12 / 4 =  3      T retorno total = 9,75
+         */
+
+        //SJF --bien
+        /**
+         * Proceso  Tiempo llegado  Tiempo de CPU
+         * P1           0                   7           T espera =  0            T retorno = 7
+         * P2           2                   4           T espera =  6            T retorno = 12
+         * P3           4                   1           T espera =  4            T retorno = 8
+         * * P4           5                   4           T espera =  8            T retorno = 16
+         *
+         * T espera Medio = 18 / 4 =  4,5      T retorno total = 10,75
+         */
+
+        //RR -- q = 4 -- mal
+        /**
+         * Proceso  Tiempo llegado  Tiempo de CPU
+         * P1           0                   10           T espera = 0+4+3+2 = 9            T retorno = 19      fALA= 6,2,0
+         * P2           1                   6           T espera =  3+3+4 = 10            T retorno = 17       FALA= 0
+         * P3           2                   3           T espera =  5            T retorno = 11       fALA = 0
+         *
+         * T espera Medio 8      T retorno total = 15,66
+         */
+
+        //RR -- q = 4 -- bien
+        /**
+         * Proceso  Tiempo llegado  Tiempo de CPU
+         * P1           0                   10           T espera = 0            T retorno = 19      fALA= 6,2,0
+         * P2           1                   6           T espera =  3            T retorno = 17       FALA= 0
+         * P3           2                   3           T espera =  6            T retorno = 11       fALA = 0
+         *
+         * T espera Medio = 3      T retorno total = 15,66
+         */
