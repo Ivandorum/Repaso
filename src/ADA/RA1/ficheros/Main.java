@@ -1,7 +1,10 @@
 package ADA.RA1.ficheros;
 
+import javax.sound.midi.Soundbank;
+import java.net.Socket;
 import java.util.*;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 
 public class Main {
@@ -107,7 +110,147 @@ public class Main {
         for (int i = 0; i < lista.size(); i++) {
             preComp.accept(lista.get(i));
         }
+
+        Function<String, Integer> test = s -> {
+            return s.length();
+        };
+        System.out.println( test.apply("adios"));
+
+
+        //Crea una función que devuelva la potencia  de dos de un numero dado
+        Function<Integer,Integer> potter = potencia -> potencia*potencia;
+        System.out.println(potter.apply(4));
+
+        //A partir de los dos functions anteriores, concadena el resultado de
+        //las dos funciones
+        System.out.println(test.andThen(potter).apply("supercalifragilisticoespialidoso"));
+
+
+        //Crea una lista con 4 textos. Usa Arrays.asList, se llamara convertirListaEnMap, devuelve un map
+        //Le pasamos dos parametro, uno de la lista y otro será una función
+        //El mapa es un Hashmap<String, INteger>, el string es cada elemento de la lista
+        //y el integer será la longitud de ese string
+
+        //List <String> textos = Arrays.asList("archeron","mei","shogun","doctora mei");
+
+        //convertirListaEnMap(textos,test);
+
+        /**
+         * Streams
+         * 3 partes:
+         * - colección
+         * - operac. intermedias (1 o mas)
+         * - operac. terminal (1)
+         */
+
+        System.out.println( List.of("no","nno","nnoo","soo","si").stream()
+                .filter(st -> st.length() > 3)
+                .map(text -> text.toUpperCase())
+                .map(len -> len.length())
+                .filter(num -> num >4)
+                .collect(Collectors.toList()));
+
+        //Usando Streams itera sobre una lista de enteros y muestrala
+        List.of(1,2,3,4,0,5,6,7,8).stream()
+                .forEach(num -> System.out.println(num));
+
+        //Crea una lista de String, comprueba si algun elemento o texto contiene la
+        //letra a y muestra.
+        System.out.println(List.of("pera", "naranja", "melon","manzana", "limon").stream()
+                .filter(st -> st.contains("a"))
+                .collect(Collectors.toList()));
+
+        //Devuelve la suma de los numeros negativos de la siguietne lista:
+        //58,9,-4,10,-1
+        System.out.println(List.of(58,9,-4,-7,10,-1).stream()
+                .filter(num -> num < 0)
+                .mapToInt(value -> value)
+                .sum()
+        );
+
+        //Como el anterior, pero devolvemos el valor maximo
+        System.out.println(List.of(58,9,-4,-7,10,-1).stream()
+                .max((o1, o2) -> o1-o2));
+
+        //Creamos una lista de palabras, devolevemos una lista con las que empiezen por c, ordenado alfabeticamente
+        System.out.println(List.of("queso","camaleon","carlos","comadreja","macaron").stream()
+                .filter(st -> st.startsWith("c"))
+                .sorted()
+                .collect(Collectors.toList()));
+
+        //Creamos una lista de 3 empleados, muestra el nombre de los empleado que tengan mas de 30 tacos
+
+
+        List<Employee> esclavos = Arrays.asList(
+                new Employee("Pablo",25, 23333),
+                new Employee("Federico", 24, 14000),
+                new Employee("Alonso", 33, 32999)
+        );
+        Deapartment it = new Deapartment("IT", esclavos);
+        Deapartment rrhh = new Deapartment("RRHH", List.of(
+                new Employee("Paca", 69,41000),
+                new Employee("Javier", 20,36000),
+                new Employee("Alonso", 33, 32999)
+        ));
+        List<Deapartment> severo = Arrays.asList(it,rrhh);
+
+        //mostrar el nombre de todos los empleados de todos los dtps
+        severo.stream()
+                .flatMap(deapartment -> deapartment.employees().stream())
+                        .forEach(employee -> System.out.println(employee.name()));
+
+        //cuenta cunatos empelados estan trabajando con edad mayor de 30 años
+        //de todos los departamentos ordenados por nombre y sin repetidos.
+        System.out.println( severo.stream()
+                .flatMap(deapartment -> deapartment.employees().stream())
+                .filter(employee -> employee.edad() > 30)
+                .map(employee -> employee.name())
+                .distinct()
+                .count());
+
+/*
+        esclavos.stream()
+                .filter(employee -> employee.edad() > 30)
+                .forEach(employee -> System.out.println(employee.name()));
+
+        //Calcula la mdeia salarial de los empleados de menos de 25 años
+        System.out.println( esclavos.stream()
+                .filter(employee -> employee.edad() < 25)
+                .mapToDouble(value -> value.salary())
+                .average());
+
+        //Muestra el nombre de los 2 empleados con mayor aslario
+        esclavos.stream()
+                .sorted((o1, o2) -> (int) (o2.salary() - o1.salary()))
+                .skip(1)
+                .limit(1)
+                .forEach(employee -> System.out.println(employee.name()));
+
+
+
+ */
+
     }
+
+    /*
+    public static Map<String, Integer> convertirListaEnMap(List<String> lista, Function <String, Integer> func){
+        Map<String, Integer> mapa = new HashMap<>();
+        //recorremos la lista
+        for (String texto: lista) {
+            mapa.put(texto, func.apply(texto));
+        }
+    }
+
+     */
+}
+
+record Deapartment(String name, List<Employee> employees){
+
+}
+
+
+record Employee(String name, int edad, double salary){
+
 }
 
 class Aldea{
