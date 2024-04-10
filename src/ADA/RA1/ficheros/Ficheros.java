@@ -196,5 +196,7 @@ public class Ficheros {
         //Leemos un fichero en forma de lista en lineas (readAllLines)
         //Queremos sacar la media de todos los numeros de un fichero
         //Ejemplo del fichero: 1 85 74 96 5
+
+
     }
 }
