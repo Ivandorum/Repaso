@@ -1,0 +1,28 @@
+{
+  "reservationId": "A-123",
+  "guest": {
+    "guestId": "34-SD",
+    "name": "Carlos",
+    "contact": {
+      "email": "carliñosbrown@gmail.com",
+      "phone": "999777111"
+    }
+  },
+  "stayDetails": {
+    "roomNumber": 12,
+    "roomType": "Simple",
+    "checkInDate": "12-04-2025"
+  },
+  "payment": {
+    "method": "Tarjeta",
+    "amount": 120.68,
+    "status": "Rejected"
+  },
+  "serviceRequested": {
+    "services": [
+      {
+        "serviceType": "Masoquista"
+      }
+    ]
+  }
+}
