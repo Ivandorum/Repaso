@@ -197,6 +197,37 @@ public class Ficheros {
         //Queremos sacar la media de todos los numeros de un fichero
         //Ejemplo del fichero: 1 85 74 96 5
 
+        Path path = Path.of("files/number.txt");
+        Pattern p = Pattern.compile("\\s");
+        try {
+            System.out.println(Files.lines(path)
+                    .flatMap(s -> p.splitAsStream(s))
+                    .mapToInt(value -> Integer.valueOf(value))
+                    .average().getAsDouble()
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        Path path1 = Path.of("files/article.txt");
+
+        try{
+            System.out.println(Files.readAllLines(path1).stream()
+                    .mapToInt(value -> value.length())
+                    .average().getAsDouble()
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Pattern pattern = Pattern.compile("\\s");
+            Files.lines(path1)
+                    .flatMap(s -> pattern.splitAsStream(s))
+                    .filter(value -> value.length() > 10)
+                    .forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
