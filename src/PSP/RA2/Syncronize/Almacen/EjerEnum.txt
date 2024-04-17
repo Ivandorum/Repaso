@@ -1,0 +1,13 @@
+
+Clase : Order: id, shoeType, quantity
+ShoeWarehouse: tendra un lista de orders (Max. 10 order). receiveOrder, fulfillOrder.
+                receiveOrder --> recibes un pedido y lo añades a la lista de pedidos
+                fulfillOrder --> Completa un pedido (Se completan conforme llegan)
+
+Clase:
+Producer: Crea un pedido (random), shoeType("Sneakers","Trainers","Sandals","Flip-Flops","Boots")
+            , quantity --> 5-20 y lo pide al almacén
+
+Consumer: solo completa un pedido y muestro "El pedido XXX ha sido completado".
+
+Main: Crea un almacén, voy a crear tres producers y un consumer

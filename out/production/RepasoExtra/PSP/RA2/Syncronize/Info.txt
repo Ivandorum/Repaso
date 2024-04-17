@@ -1,0 +1,9 @@
+BASE DE Los ejercicios Producer y Consumer
+
+Tienes:
+    Un POJO(tendra datos)
+    Una clase(objeto compartido) (solo habra un objeto) -> tendra una lista, map o algo
+        de objetos de la clase POJO
+    Un hilo producer -> produce cosas
+    Un hilo COnsumer -> consume cosas
+    Una clase Main -> Crea los hilos producer y consumer y un unico objeto de la clase compartida

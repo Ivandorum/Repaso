@@ -1,0 +1,13 @@
+Book: isbn, title. read() imprime "El cliente XXX ha recibido el libro isbn y title"
+
+BookCounter: tendremos una lista de libros.  Nuestro mostrador solo puede manejar 4 clientes a la vez
+            orderBook: los clientes lo usan para solicitar libros.
+            deliverBook: los empleados lo usan para entreagar libros.
+
+
+BookCustomer: representa a un cliente con un nombre y quiere hacer un pedido de libros. Todo aleatorio
+
+
+BookEmployee: Entrega libros a lo clientes. Después de entregar el pedido llamamos al metodo read.
+
+Main: Crea 5 clietnes y 2 empleados
