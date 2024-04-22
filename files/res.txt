@@ -1,0 +1,3 @@
+LOG username: patri
+LOG server crashed
+LOG the server is up

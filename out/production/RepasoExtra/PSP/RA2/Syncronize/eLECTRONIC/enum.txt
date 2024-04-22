@@ -1,0 +1,12 @@
+ElectronicProduct, nombre y precio
+        readyToDeliver --> imprime "El producto nombre ha sido empaquetado y esta listo para ser entregado"
+
+ElectronicStore, lista de productos, la cantidad solicitado de ese producto.
+        placeOrder: me llega un pedido del producto con cantidad y yo almaceno
+        fulfillOrder: empaquetan y envian producto
+    El espacio del almacen es limitado, solo puede almacenar 20 productos, y los pedidos
+    se procesan conforme se van realizando
+        MediaMarkt 10 tablets, m21 3 ipad, pcbox 8 graficas (no cabe)
+
+Customer: Realiza un pedido con una cantidad aleatoria entre 5-15
+        productos["Laptop", "Tablet", "Impresora 3D", "Monitor 4K", "Tarjeta de red"]

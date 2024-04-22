@@ -77,7 +77,7 @@ class Customer implements Runnable{
     public void run() {
         Random r = new Random();
         int cantidad = r.nextInt(MIN_CAN,MAX_CAN);
-            ElectronicProduct product = new ElectronicProduct(r.nextInt(0,5),20.9);
-            electronicStore.placeOrder();
+            ElectronicProduct product = new ElectronicProduct(productos[r.nextInt(0,5)],20.9);
+            electronicStore.placeOrder(product,cantidad);
     }
 }
