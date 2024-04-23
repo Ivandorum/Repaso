@@ -10,3 +10,21 @@ LOG the server is up
 Metodo: countLinesInFIles --> recibe una ruta. Recorrera todos los archivos
 de texto (.txt) en directorios y sub. Imprime la cantidad total de lineas
 de todos esos fichero
+
+
+-------------------------------------------------------------------------
+
+CLass: LeerWord
+
+Tendremos un fichero con lineas de texto.
+Leeremos linea a linea, pasaremos una palabra
+buscaremos esa palabra en el texto del fichero, y la
+reemplazamos por la misma pero toda en mayusculas
+
+
+
+------------------------------------------------------------------------
+
+Un main que pida una palabra por teclado y otra con la misma longitud.
+Buscara una palabra y la reemplazara por la nueva cada vez que aparece en
+ fichero.

@@ -1,0 +1,5 @@
+//JDBC
+            //Desfase mapeo-objeto
+            //Statement --> vulnerabilidad: SQL inyector. Solo se usa cuando no se pasan parametros
+            //PreparedStatement --> Se usa En casi todos los casos
+            //ResultSet --> forma de tabla

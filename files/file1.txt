@@ -1,4 +1,4 @@
-[0]: LOG username: patri
+[0]: LOG USERNAME: patri
 [1]: password: *****
 [2]: LOG server crashed
 [3]: LOG the server is up
