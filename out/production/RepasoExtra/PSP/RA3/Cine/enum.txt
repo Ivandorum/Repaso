@@ -1,0 +1,24 @@
+Diseña un sistema de gestión de reservas para el cine
+
+CLientes --> venta de tickets
+
+Servidor central --> de manera concurrente. COmparte un objeto que
+    representa el estado actual de las reservas entre los hilos.
+
+Tiene 30 asientos. La reserva se guarda con un identificador unico de cliente
+y el asiento reservado.
+
+Servidor: Recibe esa información y gestión la reserva del asiento.
+Si consigue hacer la reserva, debe envia un codigo 200 al cliente.
+Si no consigue hacer la reserva enviara 401
+
+Cliente: Si recibe 200 finaliza. Si recibe el 401, intenta reservar con otro numero de asiento hasta que consiga reserva.
+         Tiene el main y dentro del main creamos el socket que nos haga falta
+
+ServerCine: man y dentro del main crearemos un ServeRsOCKET 5000.
+
+ManejadorReserva: sera un hilo que procesa la comunicacion con el cliente
+
+Cine: Tendra una lista de asientos(int) PD: Usar un map donde el asiento es la clave y el valor el id de la persona
+
+    ReservarAsiento: Al reservar devuelve un entero y -1 si no reserva. Le pasas

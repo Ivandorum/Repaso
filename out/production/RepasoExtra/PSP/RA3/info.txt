@@ -1,0 +1,13 @@
+TCP
+    Protocolo orientad a conexión
+    Es más pesado, debido a que hay que mantener el canal activo
+    En Chats
+    Clases:
+        ServerSocket y Socket
+
+UDP
+    Protocolo No orientado a conexión
+    Es mas rapido
+    Streaming
+    CLases:
+        DatagramSocket, DatagramPacket
