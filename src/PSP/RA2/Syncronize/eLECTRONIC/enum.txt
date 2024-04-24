@@ -10,3 +10,7 @@ ElectronicStore, lista de productos, la cantidad solicitado de ese producto.
 
 Customer: Realiza un pedido con una cantidad aleatoria entre 5-15
         productos["Laptop", "Tablet", "Impresora 3D", "Monitor 4K", "Tarjeta de red"]
+
+Packager: Completa el pedido
+
+Main: Crea dos hclientes y 6 packager

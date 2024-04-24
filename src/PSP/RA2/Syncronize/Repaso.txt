@@ -1,0 +1,7 @@
+Cosas que siempren tendran
+
+Una clase POJO
+UN objeto compartido, que tendra una lista/coleccion de los objetos POJO
+Un hilo Producer, que llamara a un metodo para añadir a la lista
+Un hilo Consumer, que llamara a un metodo para quitar de la lista
+El main, se encarga de crear los hilos
