@@ -81,7 +81,7 @@ public class Main {
                 }
             }
 
-            //Borramos un asiento que no tenga ningun pasajero
+            //Borramos un asiento (que no tenga ningun pasajero) PD:Si tiene algun pasajero el asiento no te deja quitarlo.
             try(PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM seat WHERE id = ?")){
                 preparedStatement.setInt(1,4);
                 preparedStatement.execute();

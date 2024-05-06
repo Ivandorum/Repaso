@@ -1,0 +1,16 @@
+
+    1. INserta una fila en la tabla comment por cada comentario del array
+        justo después de insertar el número de puntos del autor en la tabla autor.
+    Si falla la inserción, no se deben acualizar los puntos.
+    Si falla la actualizacion de puntos, tampoco debe insertar.
+
+    Metodo:
+    public void processNewCommentsByAuthor(Comment[] comments, int idAuthor)
+
+    Para actualizar los puntos del autor, tendremos en cuenta el campo type:
+        -> 1: es un comentario tipo pregunta, gana 52.6 puntos
+        -> 2: es un comentario utipo respuesta, gana 103.4 puntos
+        -> Otro numero: no gana nada.
+
+    Si todo funciona correctamento muestra un mensaje solo al usuario:
+    "El autor X ha sumado X puntos a su ranking y tiene un total de X comentarios"
