@@ -1,0 +1,9 @@
+La clave del mapa es el id del autor que va a procesar esa lista de libros.
+1. Por cada clave del mapa, inserta la lista de libros para ese id del autor.
+    Se recorre el array de libros y se inserta una fila en la tabla book con ese
+    id del autor.
+    Despues de insertar todos los libros se imprime: Se han incluido XX libros para el autor YY.
+
+2. Cada vez que insertamos un libro, actualiza e incrementa el precio en un 50% si su cantidad supera o iguala 10.
+
+    Ejemplo --> Libro 1 Las noches ocultas precio:10 cantidad:12

@@ -13,7 +13,7 @@ public class StackOverflow {
     private static final double QUESTION_POINTS = 52.6;
     private static final double ANSWER_POINTS = 103.4;
 
-    private static final String insertSql = "INSERT INTO comment (descripcion, type, createdAt, authorId) VALUES (?,?,?,?)";
+    private static final String insertSql = "INSERT INTO comment (description, type, created_at, author_id) VALUES (?,?,?,?)";
     private static final String updateSql = "UPDATE author SET points = points + ? WHERE id = ?";
     private static final String selectSql = "SELECT a.name, COUNT(*) FROM comment c JOIN author a ON c.author_id=a.id WHERE c.author_id = ?";
 
@@ -47,11 +47,11 @@ public class StackOverflow {
                 select.setInt(1,idAuthor);
                 ResultSet rs = select.executeQuery();
                 if (rs.next()){
-                    System.out.println("El autor " + rs.getString("name") + " ha sumado " + totalpoints + " puntos a su ranking y tiene un total de " + rs.getInt(2) + "comentarios");
+                    System.out.println("El autor " + rs.getString("name") + " ha sumado " + totalpoints + " puntos a su ranking y tiene un total de " + rs.getInt(2) + " comentarios");
                 }
             }catch (SQLException e){
             connection.rollback();
-                System.err.println("Fallo al insertar o actualizar");
+                System.err.println(e.getMessage());
             }
         } catch (SQLException e) {
             System.err.println("Error al conectar con la base de datos");
