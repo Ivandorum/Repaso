@@ -1,0 +1,23 @@
+Comunicacion entre clientes(postores) y un servidor de subastas.
+
+Cada cliente simulara la participacion en una subasta enviando
+sus pujas al servidor. Servidor procesa pujas.
+
+En la subasta se subastan 3 lotos con ids: 1,2,3
+El servidor almacenará para la puja recibida el id del cliente,
+con el precio que puja para ese lote.
+
+Cliente: realizará puajs del lote que quiera, eso si,
+solamente se aceptará su oferta si es la puja más alta
+hasta el momento para ese lote.
+
+Un cliente solo puede realizar 3 pujas, si se acepta alguna
+el cliente finaliza. Si no se acepta ninguna de las 3 tambien acaba.
+
+El numero y el precio sera aleatorio.
+La informacion se envia de esta manera:
+
+ID_LOTE#IDCLIENTE#PRECIO
+
+Si el servidor acepta una puja, envia un código 200 al cliente
+y mostrara mensaje "Subasta aceptada para el postor X con precio X"

@@ -50,8 +50,9 @@ public class MainLibrary {
     public static void main(String[] args) {
         Map<Integer, Book[]> data = new HashMap<>();
         Book libro1 = new Book("El rey Arturo", 12.4, 12,1);
-        Book[] estanteria;
-        data.put(1,)
+        //Book[] estanteria =
+        //estanteria
+        //data.put(1,estanteria)
         processAuthorBooks(data);
     }
 }
