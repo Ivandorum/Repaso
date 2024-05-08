@@ -1,0 +1,13 @@
+TPV --> cliente para un TPV
+Servidor central
+
+Simulamos un TPV, que enviara datos al servidor de venta.
+El cliente enviará: producto;cantida ,ejemplo: leche;24
+
+Gestiona el inventario para garantizar la consistencia
+
+Lista de productos: leche, pan , donuts, aceite, chocolate, jamon, patata, atun, bonito
+cantida 5-50
+Envió y envio dormimos 3s
+
+Gestionar el inventario para garantiar la consistencia
