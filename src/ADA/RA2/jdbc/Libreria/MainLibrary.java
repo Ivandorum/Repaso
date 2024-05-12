@@ -12,14 +12,18 @@ public class MainLibrary {
     private static final String URL = "jdbc:mysql://localhost:33060/mydb";
     private static final String USER = "root";
     private static final String PASS = "admin";
+    private static final int CANTIDAD_MAX = 10;
 
+
+    private static final String updateSql = "UPDATE book SET price = price + (price * 0.5) WHERE id = ?";
     private static final String insertSql = "INSERT INTO book (title, price, quantity, autor_id) VALUES (?,?,?,?)";
 
     public static void processAuthorBooks(Map<Integer, Book[]> data){
         try(Connection conn = DriverManager.getConnection(URL,USER,PASS)) {
             conn.setAutoCommit(false);
             int contadorLibros = 0;
-            try(PreparedStatement insertPr = conn.prepareStatement(insertSql)){
+            try(PreparedStatement insertPr = conn.prepareStatement(insertSql);
+                PreparedStatement updatePr = conn.prepareStatement(updateSql)){
                 for (int autor:data.keySet()) {
                     Book[] booksList = data.get(autor);
                     for (int i = 0; i < booksList.length; i++) {
@@ -30,7 +34,13 @@ public class MainLibrary {
                         insertPr.setInt(4,autor);
                         contadorLibros++;
 
-                        insertPr.executeUpdate();
+                        int work = insertPr.executeUpdate();
+                        if(work > 0) {
+                            if (book.getQuantity() >= CANTIDAD_MAX) {
+                                updatePr.setInt(1, book.getId());
+                                updatePr.executeUpdate();
+                            }
+                        }
                     }
                     System.out.println("Se han incluido " + contadorLibros + " libros para el autor " + autor);
                     contadorLibros = 0;
