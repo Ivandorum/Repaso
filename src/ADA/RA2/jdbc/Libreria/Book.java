@@ -13,6 +13,11 @@ public class Book {
         this.quantity = quantity;
         this.autorId = autorId;
     }
+    public Book(String title, double price, int quantity) {
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
     public int getId() {
         return id;
