@@ -18,6 +18,7 @@ public class MainLibrary {
     private static final String updateSql = "UPDATE book SET price = price + (price * 0.5) WHERE id = ?";
     private static final String insertSql = "INSERT INTO book (title, price, quantity, autor_id) VALUES (?,?,?,?)";
 
+
     public static void processAuthorBooks(Map<Integer, Book[]> data){
         try(Connection conn = DriverManager.getConnection(URL,USER,PASS)) {
             conn.setAutoCommit(false);
@@ -39,6 +40,7 @@ public class MainLibrary {
                             if (book.getQuantity() >= CANTIDAD_MAX) {
                                 updatePr.setInt(1, book.getId());
                                 updatePr.executeUpdate();
+                                System.out.println("Libro " + book.getTitle() + " con precio " + book.getPrice() + " y cantidad " + book.getQuantity() + " se ha añadido");
                             }
                         }
                     }
