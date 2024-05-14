@@ -1,0 +1,17 @@
+Para cada tarjeta del lote comprueba que exista en la BD --> 0.5
+Si existe actualiza el numero de tarjeta que hay en la BD con el nuevo --> 0.5
+Si no existe:
+a --> Compruebo si la tarjeta tiene un cliente asociado, comprueba si ese
+        cliente no tiene ya una tarjeta en la bd asociada a él. Si no
+        tiene, la creo asociada a el. IMprimo mensaje
+
+b-- > Si existe el cliente y ya tiene una tarjeta asociada a él,
+        entonces la tarjeta no se crea y se deshacen todas las operaciones posterior
+        Imprimo mensaje, y sale del metodo devuelve -1
+
+c--> Si la tarjeta viene sin cliente la creo sin asociarla, imprimo mensaje.
+
+
+La a,b y c valen 1 punto cada una.
+
+Devuelve el numero de tarjetas actualizadas y el numero de tarjetas insertadas.
