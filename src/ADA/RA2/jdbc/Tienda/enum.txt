@@ -13,3 +13,5 @@ c--> Si la tarjeta viene sin cliente la creo sin asociarla, imprimo mensaje.
 
 
 La a,b y c valen 1 punto cada una.
+
+Devuelve el numero de tarjetas actualizadas y el numero de tarjetas insertadas.
