@@ -1,0 +1,9 @@
+Simular la comunicacion entre un sensor y un servidor central.
+Sensor de un área --> Simulamos el envio de temperatura de esa area
+                      al servidor: area#tempratura
+                      Envia la temperatura cada 5s, la temperatura sera un numero aleatorio entre -60 y 60
+
+Servidor --> recibe las temperaturas de todos los sensores. Procesa
+las temperaturas, si la temperatura supera cierto umbral, supera los
+40 grados o supera los -10
+guardara el suceso en unico fichero compartido con la fecha.

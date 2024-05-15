@@ -1,0 +1,13 @@
+
+COrredor--> Simulara un corredor de la carrera.
+      Cada corredor lleva un gps que envia actualizaciones de su posicion en la carrera a un servidor.
+      ID_PARTICIPANTE;LATITUD;LONGITUD
+      Enviando paquetes cada 2s.
+
+Servidor --> Procesara esos paquetes y generara un informe en tiempo real.
+        Actualizar el informe de posicion de cada participante. Añadir al mensaje
+        la fecha y hora, y lo guarda en un texto único para todos los participantes.
+
+
+Después de escribir el texto, se debe escribir en un fichero único llamado
+informe carrera.txt

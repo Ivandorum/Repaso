@@ -1,5 +1,7 @@
 package PSP.RA3.TPV;
 
+import PSP.RA3.UDP.race.InformeCarrera;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
