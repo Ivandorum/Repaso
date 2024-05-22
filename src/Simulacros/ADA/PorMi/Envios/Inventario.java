@@ -3,7 +3,6 @@ package Simulacros.ADA.PorMi.Envios;
 import java.util.Map;
 
 public class Inventario {
-    Map<Integer,Integer>
     private int id;
     private int stock;
     private int productId;

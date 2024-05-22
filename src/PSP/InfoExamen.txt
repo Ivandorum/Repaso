@@ -1,0 +1,15 @@
+El Examen es el Miercoles en el aula de ORD8
+
+Tenemos 3h para hacer el examen --> 15:10 - 18:00
+
+RA1 --> ud1,ud2 --> Procesos
+        Sera un test --> 15-20 min
+
+RA2 --> ud3,ud4 --> Cafeteria, Libreria, pUente, Parking, Ascensor, Almacen
+                    Ejercicio practico --> 1hr
+
+RA3 --> ud6,ud7 --> TCP/UDP, Cine, Corredor, Sensor, Subasta
+                    Ejercicio práctico --> 1hr
+
+RA4 --> ud8 --> URL, URI, acceso a la página y expr. regu
+teoría, práctica -->20-30 min
