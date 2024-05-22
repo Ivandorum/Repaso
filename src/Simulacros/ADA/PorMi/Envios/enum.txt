@@ -1,0 +1,13 @@
+Cada vez que se genera un pedido (order), actualiza el inventario y ademas
+se crea un registro de envío (shipping) para ese producto.
+
+Pasos para procesar el pedido
+1. Insertar en la tabla pedido, el pedido que se pasa por parametros.
+2. Teniendo en cuenta el stock que tiene el producto actualmente (stock)
+    y la cantidad de unidades que se han pedido. Actualizar dicho stock.
+    en la tabla inventory. Solo actualizo si hay mas o igual de stock.
+3. Si la actualizacion de stock ha ido bien, insertamos un nuevo envio.
+Si no, no se podrá realizar el pedido. Si algo falla, no se debe crear el
+pedido y todo lo que conlleva.
+Si todo funciona ok, se muestra el siguiente mensaje:
+"Pedido del producto X enviado"
