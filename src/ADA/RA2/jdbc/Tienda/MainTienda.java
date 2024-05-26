@@ -10,15 +10,15 @@ import java.util.Set;
 public class MainTienda {
 
 
-    private static final String url = "jdbc:mysql://localhost:33060/mydb";
+    private static final String url = "jdbc:mysql://localhost:3306/mydb";
     private static final String user = "root";
-    private static final String pass = "admin";
+    private static final String pass = "root";
 
-    private static final String selectSql = "SELECT COUNT(*) FROM membership_card WHERE id = ?";
-    private static final String updateSql = "UPDATE membership_card SET card_number = ? WHERE id = ?";
-    private static final String insertSql = "INSERT INTO membership_card (card_number, expire_date) VALUES (?,?)";
-    private static final String insertWithCustomerSql = "INSERT INTO membership_card (card_number, expire_date,customer_id) VALUES (?,?,?)";
-    private static final String customerCheckSql = "SELECT COUNT(*) FROM membership_card WHERE customer_id = ?";
+    private static final String selectSql = "SELECT COUNT(*) FROM tarjeta WHERE id = ?";
+    private static final String updateSql = "UPDATE tarjeta SET card_number = ? WHERE id = ?";
+    private static final String insertSql = "INSERT INTO tarjeta (card_number, expire_date) VALUES (?,?)";
+    private static final String insertWithCustomerSql = "INSERT INTO tarjeta (card_number, expire_date,customer_id) VALUES (?,?,?)";
+    private static final String customerCheckSql = "SELECT COUNT(*) FROM tarjeta WHERE customer_id = ?";
 
     //Recuerda el Set no acepta duplicados
     public static int[] renewMembershipBatch(Set<MembershipCard> data){
@@ -82,6 +82,7 @@ public class MainTienda {
         Set<MembershipCard> data = new HashSet<>();
         data.add(new MembershipCard("1234FE", LocalDateTime.now().plusDays(7)));
         data.add(new MembershipCard("0000EE", LocalDateTime.now()));
-        System.out.println(renewMembershipBatch(data));
+        int[] nums = renewMembershipBatch(data);
+        System.out.println(nums[0] + "" + nums[1]);
     }
 }
